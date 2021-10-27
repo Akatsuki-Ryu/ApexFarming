@@ -27,15 +27,11 @@ while keyboard.is_pressed('q') == False:
 
 
     if pyautogui.locateOnScreen('InGame.png', region=(87,755,379,304), grayscale=True, confidence=0.8) != None:
-        print("In game, landed and waiting")
+        print("In game, landed and playing")
         keyboard.press_and_release('W')
         time.sleep(0.5)
-        keyboard.press_and_release('D')
-        time.sleep(0.5)
-        keyboard.press_and_release('W')
-        time.sleep(0.5)
-        keyboard.press_and_release('D')
-        time.sleep(0.5)
+        #keyboard.press_and_release('D')
+        #time.sleep(0.5)
 
     if pyautogui.locateOnScreen('dead.png', region=(441,19,1017,304), grayscale=True, confidence=0.6) != None:
         print("In game, dead")
@@ -59,15 +55,15 @@ while keyboard.is_pressed('q') == False:
 
     if pyautogui.locateOnScreen('jump.PNG', region=(715,743,513,304), grayscale=True, confidence=0.9) != None:
         print("In game, jumping")
-        keyboard.press_and_release('Enter')
-        time.sleep(0.5)
-        keyboard.press_and_release('L')
-        time.sleep(0.5)
-        keyboard.press_and_release('O')
-        time.sleep(0.5)
-        keyboard.press_and_release('L')
-        time.sleep(0.5)
-        keyboard.press_and_release('Enter')
+        #keyboard.press_and_release('Enter')
+        #time.sleep(0.5)
+        #keyboard.press_and_release('L')
+        #time.sleep(0.5)
+        #keyboard.press_and_release('O')
+        #time.sleep(0.5)
+        #keyboard.press_and_release('L')
+        #time.sleep(0.5)
+        #keyboard.press_and_release('Enter')*/
 
     if pyautogui.locateOnScreen('Contunue.PNG', region=(773,581,379,304), grayscale=True, confidence=0.6) != None:
         click(952, 717)
