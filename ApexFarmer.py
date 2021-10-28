@@ -5,7 +5,7 @@ import keyboard
 import random
 import win32api, win32con
 
-gamestate = 0
+gamestate = 0 # 0 is lobby , 1 is in game
 tic = 0
 
 def click(x,y):
@@ -25,7 +25,9 @@ while keyboard.is_pressed('q') == False:
         click(171, 675)
 
     if pyautogui.locateOnScreen('ManuReady.png', region=(0,538,447,528), grayscale=True, confidence=0.7) != None:
-        print("lobby, Waiting to start")
+        if gamestate == 1:
+            gamestate = 0
+            print("lobby, Waiting to start")
         time.sleep(5)
 
 
@@ -38,18 +40,18 @@ while keyboard.is_pressed('q') == False:
         if tic !=0:
             toc = time.perf_counter()
             #print(f"InGame for {toc - tic:0.4f} seconds")
-        
-        keyboard.press_and_release('W')
+
+        keyboard.press_and_release('A')
         time.sleep(0.5)
-        #keyboard.press_and_release('D')
-        #time.sleep(0.5)
+        keyboard.press_and_release('D')
+        time.sleep(0.5)
 
     if pyautogui.locateOnScreen('dead.png', region=(441,19,1017,304), grayscale=True, confidence=0.6) != None:
         print("In game, dead")
         if tic !=0:
             toc = time.perf_counter()
             print(f"InGame for {toc - tic:0.4f} seconds")
-        gamestate = 0
+        #gamestate = 0
         click(1771, 1040)
         time.sleep(0.5)
         click(1771, 1040)
