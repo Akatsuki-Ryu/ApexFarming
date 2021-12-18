@@ -6,6 +6,9 @@ import random
 
 Random = ['a','w','s','d','4','q','1','2','3','4']
 
+gamestate = 0 # 0 is lobby , 1 is in game
+tic = 0
+
 while True:
     if pyautogui.locateOnScreen('ManuNotReady.png', region=(0,538,447,528), grayscale=True, confidence=0.5) != None:
         pyautogui.click(230, 950)
@@ -27,12 +30,21 @@ while True:
     
     
     if pyautogui.locateOnScreen('InGame.png', region=(87,755,379,304), grayscale=True, confidence=0.5) != None:
-        print("In game, landed and waiting")
         keyboard.press_and_release(Random)
         time.sleep(0.5)
+        
+        if gamestate == 0:
+            gamestate = 1
+            print("In game, landed and playing")
+            tic = time.perf_counter()
+
     
     if pyautogui.locateOnScreen('dead.png', region=(441,19,1017,304), grayscale=True, confidence=0.6) != None:
         print("In game, dead")
+        if tic !=0:
+            toc = time.perf_counter()
+            print(f"InGame for {toc - tic:0.4f} seconds")
+        gamestate = 0
         pyautogui.click(1771, 1040)
         time.sleep(0.5)
         pyautogui.click(1771, 1040)
