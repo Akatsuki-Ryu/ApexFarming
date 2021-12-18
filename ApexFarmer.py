@@ -11,22 +11,27 @@ tic = 0
 
 def click(x, y):
     win32api.SetCursorPos((x, y))
+    time.sleep(0.1)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
 
 
 while keyboard.is_pressed('q') == False:
-    if pyautogui.locateOnScreen('ManuNotReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
-        click(230, 950)
-        time.sleep(0.5)
 
     if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
         print("lobby, setup team")
         click(171, 675)
         time.sleep(0.5)
         click(171, 675)
+        
+    if pyautogui.locateOnScreen('ManuNotReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.5) != None:
+        print("click ready")
+        click(230, 950)
+        time.sleep(0.5)
 
-    if pyautogui.locateOnScreen('ManuReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
+
+
+    if pyautogui.locateOnScreen('MenuReady_hover.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.5) != None:
         if gamestate == 1:
             gamestate = 0
             print("lobby, Waiting to start")
