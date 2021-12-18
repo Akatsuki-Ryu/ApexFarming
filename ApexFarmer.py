@@ -51,7 +51,7 @@ while keyboard.is_pressed('q') == False:
         print("In game, dead")
         if tic != 0:
             toc = time.perf_counter()
-            print(f"InGame for {toc - tic:0.4f} seconds")
+            print(f"=======================================InGame for {toc - tic:0.4f} seconds")
         # gamestate = 0
         click(1771, 1040)
         time.sleep(0.5)
