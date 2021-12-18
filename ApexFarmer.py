@@ -19,24 +19,27 @@ while True:
         pyautogui.click(171, 675)
         time.sleep(0.5)
         pyautogui.click(171, 675)
+        print("lobby, setup team")
                 
     if pyautogui.locateOnScreen('ManuReady.png', region=(0,538,447,528), grayscale=True, confidence=0.7) != None:
-        print("Waiting for game")
+        print("lobby, Waiting to start")
         time.sleep(5)
     
     
     if pyautogui.locateOnScreen('InGame.png', region=(87,755,379,304), grayscale=True, confidence=0.5) != None:
-        print("In game waiting")
+        print("In game, landed and waiting")
         keyboard.press_and_release(Random)
         time.sleep(0.5)
     
     if pyautogui.locateOnScreen('dead.png', region=(441,19,1017,304), grayscale=True, confidence=0.6) != None:
+        print("In game, dead")
         pyautogui.click(1771, 1040)
         time.sleep(0.5)
         pyautogui.click(1771, 1040)
                 
     
     if pyautogui.locateOnScreen('leave.png', region=(0,0,1920,1080), grayscale=True, confidence=0.6) != None:
+        print("In game, leaving match")
         pyautogui.click(963, 623)
         time.sleep(0.5)
      
@@ -49,15 +52,8 @@ while True:
         pyautogui.click(850, 713)
          
     if pyautogui.locateOnScreen('jump.PNG', region=(715,743,513,304), grayscale=True, confidence=0.9) != None:
-        keyboard.press_and_release('Enter')
-        time.sleep(0.5)
-        keyboard.press_and_release('L')
-        time.sleep(0.5)
-        keyboard.press_and_release('O')
-        time.sleep(0.5)
-        keyboard.press_and_release('L')         
-        time.sleep(0.5)
-        keyboard.press_and_release('Enter')
+        print("In game, jumping")
+
 
     if pyautogui.locateOnScreen('Contunue.PNG', region=(773,581,379,304), grayscale=True, confidence=0.6) != None:
         pyautogui.click(952, 717)
@@ -65,6 +61,7 @@ while True:
         pyautogui.click(952, 717)
          
     if pyautogui.locateOnScreen('startmanu.PNG', region=(773,581,379,304), grayscale=True, confidence=0.6) != None:
+        print("starting game")
         pyautogui.click(952, 717)
         time.sleep(0.5)
         pyautogui.click(952, 717)
