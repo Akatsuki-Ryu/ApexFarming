@@ -42,9 +42,9 @@ while keyboard.is_pressed('q') == False:
             toc = time.perf_counter()
             # print(f"InGame for {toc - tic:0.4f} seconds")
 
-        keyboard.press_and_release('A')
+        keyboard.press_and_release('a')
         time.sleep(0.5)
-        keyboard.press_and_release('D')
+        keyboard.press_and_release('d')
         time.sleep(0.5)
 
     if pyautogui.locateOnScreen('dead.png', region=(441, 19, 1017, 304), grayscale=True, confidence=0.6) != None:
