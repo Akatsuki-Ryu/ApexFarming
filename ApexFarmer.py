@@ -9,11 +9,11 @@ gamestate = 0  # 0 is lobby , 1 is in game
 tic = 0
 
 while True:
-    if pyautogui.locateOnScreen('ManuNotReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.5) != None:
+    if pyautogui.locateOnScreen('ManuNotReady.png', region=(0,538,447,528), grayscale=True, confidence=0.7) != None:
         pyautogui.click(230, 950)
         time.sleep(0.5)
-
-    if pyautogui.locateOnScreen('ManuNotReady2.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.5) != None:
+     
+    if pyautogui.locateOnScreen('ManuNotReady2.png', region=(0,538,447,528), grayscale=True, confidence=0.7) != None:
         pyautogui.click(230, 950)
         time.sleep(0.5)
 
