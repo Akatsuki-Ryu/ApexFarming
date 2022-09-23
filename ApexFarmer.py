@@ -37,7 +37,7 @@ while True:
         time.sleep(5)
 
     if pyautogui.locateOnScreen('InGame.png', region=(87, 755, 379, 304), grayscale=True, confidence=0.5) != None:
-        print("In game waiting")
+        #print("In game waiting")
         keyboard.press_and_release(Random)
         time.sleep(0.5)
 
