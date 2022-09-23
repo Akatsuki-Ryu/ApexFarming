@@ -2,6 +2,7 @@ import keyboard
 import pyautogui
 import time
 from pyautogui import *
+import random
 
 Random = ['a', 'w', 's', 'd', '4', 'q', '1', '2', '3', '4']
 
@@ -12,7 +13,7 @@ while True:
     if pyautogui.locateOnScreen('ManuNotReady.png', region=(0,538,447,528), grayscale=True, confidence=0.7) != None:
         pyautogui.click(230, 950)
         time.sleep(0.5)
-     
+
     if pyautogui.locateOnScreen('ManuNotReady2.png', region=(0,538,447,528), grayscale=True, confidence=0.7) != None:
         pyautogui.click(230, 950)
         time.sleep(0.5)
@@ -24,10 +25,11 @@ while True:
         print("lobby, setup team")
 
     if pyautogui.locateOnScreen('ManuReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
-        print("lobby, Waiting to start")
+        print("Waiting for game")
         time.sleep(5)
 
     if pyautogui.locateOnScreen('InGame.png', region=(87, 755, 379, 304), grayscale=True, confidence=0.5) != None:
+        print("In game waiting")
         keyboard.press_and_release(Random)
         time.sleep(0.5)
 
@@ -40,7 +42,7 @@ while True:
         print("In game, dead")
         if tic != 0:
             toc = time.perf_counter()
-            print(f"InGame for {toc - tic:0.4f} seconds")
+            print(f"==============================================InGame for {toc - tic:0.4f} seconds")
         gamestate = 0
         pyautogui.click(1771, 1040)
         time.sleep(0.5)
@@ -72,3 +74,34 @@ while True:
         pyautogui.click(952, 717)
         time.sleep(0.5)
         pyautogui.click(952, 717)
+
+
+    if pyautogui.locateOnScreen('MenuReady_hover.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.5) != None:
+        if gamestate == 1:
+            gamestate = 0
+            print("lobby, Waiting to start")
+        time.sleep(5)
+
+    if pyautogui.locateOnScreen('InGame.png', region=(87, 755, 379, 304), grayscale=True, confidence=0.8) != None:
+        if gamestate == 0:
+            gamestate = 1
+            print("In game, landed and playing")
+            tic = time.perf_counter()
+
+        if tic != 0:
+            toc = time.perf_counter()
+            # print(f"InGame for {toc - tic:0.4f} seconds")
+
+        keyboard.press_and_release('a')
+        time.sleep(0.5)
+        keyboard.press_and_release('d')
+        time.sleep(0.5)
+
+
+
+
+
+
+
+
+
