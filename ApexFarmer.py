@@ -11,17 +11,25 @@ tic = 0
 
 while True:
     if pyautogui.locateOnScreen('ManuNotReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
+        if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
+            pyautogui.click(171, 675)
+            time.sleep(0.5)
+            print("lobby, setup team")
         pyautogui.click(230, 950)
         time.sleep(0.5)
 
     if pyautogui.locateOnScreen('ManuNotReady2.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
+        if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
+            pyautogui.click(171, 675)
+            time.sleep(0.5)
+            print("lobby, setup team")
         pyautogui.click(230, 950)
         time.sleep(0.5)
 
     if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
         pyautogui.click(171, 675)
         time.sleep(0.5)
-        pyautogui.click(171, 675)
+        #pyautogui.click(171, 675)
         print("lobby, setup team")
 
     if pyautogui.locateOnScreen('ManuReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
