@@ -38,6 +38,10 @@ while True:
             print("In game, landed and playing")
             tic = time.perf_counter()
 
+        if tic != 0:
+            toc = time.perf_counter()
+            # print(f"InGame for {toc - tic:0.4f} seconds")
+
     if pyautogui.locateOnScreen('dead.png', region=(441, 19, 1017, 304), grayscale=True, confidence=0.6) != None:
         print("In game, dead")
         if tic != 0:
@@ -74,25 +78,3 @@ while True:
         pyautogui.click(952, 717)
         time.sleep(0.5)
         pyautogui.click(952, 717)
-
-    if pyautogui.locateOnScreen('MenuReady_hover.png', region=(0, 538, 447, 528), grayscale=True,
-                                confidence=0.5) != None:
-        if gamestate == 1:
-            gamestate = 0
-            print("lobby, Waiting to start")
-        time.sleep(5)
-
-    if pyautogui.locateOnScreen('InGame.png', region=(87, 755, 379, 304), grayscale=True, confidence=0.8) != None:
-        if gamestate == 0:
-            gamestate = 1
-            print("In game, landed and playing")
-            tic = time.perf_counter()
-
-        if tic != 0:
-            toc = time.perf_counter()
-            # print(f"InGame for {toc - tic:0.4f} seconds")
-
-        keyboard.press_and_release('a')
-        time.sleep(0.5)
-        keyboard.press_and_release('d')
-        time.sleep(0.5)
