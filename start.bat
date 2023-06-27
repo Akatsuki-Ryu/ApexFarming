@@ -2,7 +2,7 @@
 color 02
 ECHO Thanks you for using my auto farmer By:stevekiller176#3548
 PAUSE
-color 01
+color 02
 ECHO mNNNNNNmmmmmddddddddhdhhhdhhhhhyyysssssssoooooooooooooooooosssssssyhhhhhddhhdddddddmmmmmmmdmmmmmmNNN
 ECHO NNNNNNNmmmmdddddddhhdhddhhhyyyyssssooooo+++//::::----::://++oossssyyyhyhhhhddddddddddmmmmmmmmmmmNNNN
 ECHO NNNmNmmmmmdddhdddhhhhhhhhyyyssssso+o++/:-...````````````....-:/+oossssyyyhhhhhhddddddmmmmdmmmmmNNNNN
