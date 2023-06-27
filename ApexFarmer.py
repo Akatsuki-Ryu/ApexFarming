@@ -8,12 +8,15 @@ Random = ['a', 'w', 's', 'd', '4', 'q', '1', '2', '3', '4']
 
 gamestate = 0  # 0 is lobby , 1 is in game
 tic = 0
+fillteammate = 1
 
 while True:
     if pyautogui.locateOnScreen('ManuNotReady.png', region=(0, 538, 447, 528), grayscale=True, confidence=0.7) != None:
         if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
             pyautogui.click(171, 675)
             time.sleep(0.5)
+            fillteammate = 0
+            #pyautogui.click(171, 675)
             print("lobby, setup team")
         pyautogui.click(230, 950)
         time.sleep(0.5)
@@ -22,6 +25,8 @@ while True:
         if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
             pyautogui.click(171, 675)
             time.sleep(0.5)
+            fillteammate = 0
+            #pyautogui.click(171, 675)
             print("lobby, setup team")
         pyautogui.click(230, 950)
         time.sleep(0.5)
@@ -29,6 +34,7 @@ while True:
     if pyautogui.locateOnScreen('Team.png', region=(3, 520, 445, 304), grayscale=True, confidence=0.9) != None:
         pyautogui.click(171, 675)
         time.sleep(0.5)
+        fillteammate = 0
         #pyautogui.click(171, 675)
         print("lobby, setup team")
 
